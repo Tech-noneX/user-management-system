@@ -1,0 +1,57 @@
+{
+    "user_1": {
+        "first name": "User1",
+        "last name": "User1",
+        "email": "user_1@gmail.com",
+        "password": "1234",
+        "role": "super admin",
+        "access": true,
+        "status": "offline",
+        "attempts": 0,
+        "location": null
+    },
+    "user_2": {
+        "first name": "user2",
+        "last name": "user2",
+        "email": "user_2@gmail.com",
+        "password": "4321",
+        "role": "user",
+        "access": true,
+        "status": "offline",
+        "attempts": 0,
+        "location": null
+    },
+    "User_3": {
+        "first name": "user3",
+        "last name": "user3",
+        "email": "User_3@gmail.com",
+        "password": "7896",
+        "role": "admin",
+        "access": true,
+        "status": "online",
+        "attempts": 0,
+        "location": null
+    },
+    "user_4": {
+        "first name": "user4",
+        "last name": "user4",
+        "email": "User_4@gmail.com",
+        "password": "sparta",
+        "role": "admin",
+        "access": true,
+        "status": "online",
+        "attempts": 0,
+        "location": null
+    },
+    "test_1": {
+        "first name": "test1",
+        "last name": "test1",
+        "email": "test_1@email.com",
+        "password": "testo",
+        "role": "user",
+        "access": true,
+        "status": null,
+        "attempts": 0,
+        "location": null
+    }
+}
