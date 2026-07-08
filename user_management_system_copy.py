@@ -379,67 +379,29 @@ class RegisterUser:
         self.users_online = 0
         self.super_admin = 0
         self.admin = 0
-
         self.super_admin_logged_in = []
         self.admin_logged_in = set()
         self.user_logged_in = set()
-        for user in self.users.items():
-            self.users_count += 1
-        for values in self.users.values():
-            if values['status'] == 'online':
-                self.users_online += 1
-        for values in self.users.values():
-            if values['role'] == 'admin':
-                self.admin += 1
-        for values in self.users.values():
-            if values['role'] == 'super admin':
-                self.super_admin += 1
         for nick, data in self.users.items():
-            if data['role'] == 'super admin':
-                if data['status'] == 'online':
-                    self.super_admin_logged_in.append(nick)       
-        for nick, data in self.users.items():
+            self.users_count += 1       
+            if data['status'] == 'online':
+                self.users_online += 1  
             if data['role'] == 'admin':
+                self.admin += 1  
                 if data['status'] == 'online':
                     self.admin_logged_in.add(nick)
-        for nick, data in self.users.items():
-            if data['role'] == 'user':
+            elif data['role'] == 'super admin':
+                self.super_admin += 1  
+                if data['status'] == 'online': 
+                    self.super_admin_logged_in.append(nick)        
+            elif data['role'] == 'user':
                 if data['status'] == 'online':
                     self.user_logged_in.add(nick)
 
 
     def admin_refresh_data(self):
-        self.users_count = 0
-        self.users_online = 0
-        self.super_admin = 0
-        self.admin = 0
-
-        self.super_admin_logged_in = []
-        self.admin_logged_in = set()
-        self.user_logged_in = set()
-        for user in self.users.items():
-            self.users_count += 1
-        for values in self.users.values():
-            if values['status'] == 'online':
-                self.users_online += 1
-        for values in self.users.values():
-            if values['role'] == 'admin':
-                self.admin += 1
-        for values in self.users.values():
-            if values['role'] == 'super admin':
-                self.super_admin += 1
-        for nick, data in self.users.items():
-            if data['role'] == 'super admin':
-                if data['status'] == 'online':
-                    self.super_admin_logged_in.append(nick)       
-        for nick, data in self.users.items():
-            if data['role'] == 'admin':
-                if data['status'] == 'online':
-                    self.admin_logged_in.add(nick)
-        for nick, data in self.users.items():
-            if data['role'] == 'user':
-                if data['status'] == 'online':
-                    self.user_logged_in.add(nick)
+        self.refresh_data()
+        
         print(f"Number of users registered: {self.users_count}\n"
               f"Number of users 'online': {self.users_online}\n"
               f"Number of admins registered: {self.admin}\n"
@@ -498,8 +460,8 @@ class Messages:
         print("coming soon")
         for user in self.ru.users:
             print(user)
-
-RegisterUser().main_menu()
+if __name__ == "__main__":
+    RegisterUser().main_menu()
 
 
 

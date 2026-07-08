@@ -1,28 +1,37 @@
 # Python User Management System
 
-A **command-line user management system** built in Python that supports user registration, login/logout, role-based access (user, admin, super admin), and persistent user data storage in JSON format.
+A command-line user management practice project built in Python.
 
----
+It supports registering users, logging in and out, role-based menus, account access control, and saving user data to JSON.
 
 ## Features
 
-- **Register new users and super admins**
-- **Role-based access control:** User, Admin, Super Admin
-- **Menu-driven CLI interface** (text-based)
-- **Persistent storage:** User data saved in `users_data.json`
-- **Login and logout with account locking after failed attempts**
-- **Super admin dashboard** to manage users, roles, access, and view system status
-- **Basic messaging system** (in progress)
+- Register normal users
+- Register one super admin
+- Log users in and out
+- Track online and offline status
+- Lock accounts after repeated failed password attempts
+- Store user records in `users_data.json`
+- Super admin tools for changing user role, access, and status
+- Basic user/admin menu structure
+- Placeholder messaging feature
 
----
+## Project Files
 
-## Getting Started
+- `user-management-system.py` - main CLI application
+- `users_data.json` - saved user data
 
-### **Requirements**
+## How To Run
 
-- Python 3.x
-
-### **Usage**
+From the project folder:
 
 ```bash
 python user-management-system.py
+```
+
+On first use, create a super admin from the main menu. After that, the program loads existing users from `users_data.json`.
+
+## Notes
+
+- Passwords are currently stored as plain text because this is a learning project.
+- Some menu options, such as messaging and parts of the admin menu, are still in progress.
